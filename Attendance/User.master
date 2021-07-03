@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            height: 23px;
+        }
+        .auto-style3 {
+            text-align: left;
+            color: #339966;
+            height: 23px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="header">
+        <asp:Image ID="Image1" runat="server" />
+    </div>
+        <div id="menu">
+            <table dir="rtl" style="width: 100%">
+                <tr>
+                    <td>
+                        <asp:Button ID="Button1" runat="server" CssClass="btnmenu" Text="الصفحة الرئيسية" />
+                    </td>
+                    <td>
+                        <asp:Button ID="Button2" runat="server" CssClass="btnmenu" PostBackUrl="~/Branch.aspx" Text="الفرع" />
+                    </td>
+                    <td>
+                        <asp:Button ID="Button3" runat="server" CssClass="btnmenu" Text="الموظفين" />
+                    </td>
+                    <td>
+                        <asp:Button ID="Button4" runat="server" CssClass="btnmenu" Text="الاقتراحات" />
+                    </td>
+                    <td>
+                        <asp:Button ID="Button5" runat="server" CssClass="btnmenu" Text="لوحة التحكم" />
+                    </td>
+                    <td>
+                        <asp:Button ID="Button6" runat="server" CssClass="btnmenu" Text="اتصل بي" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="mainn">
+            <div id="right">
+                <div id="studentlogin">
+                    <table class="auto-style1" dir="rtl">
+                        <tr>
+                            <td class="loginTittle" colspan="2">&nbsp;دخول الطالب</td>
+                        </tr>
+                        <tr>
+                            <td class="lbl">&nbsp;أسم المستخدم</td>
+                            <td>
+                                <asp:TextBox ID="txtstuuname" runat="server" CssClass="txt"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl">كلمة المرور </td>
+                            <td>
+                                <asp:TextBox ID="txtstupass" runat="server" CssClass="txt" TextMode="Password"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl">&nbsp;</td>
+                            <td>
+                                <asp:Button ID="btnstuentry" runat="server" CssClass="btn" Text="دخول" OnClick="btnstuentry_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl">&nbsp;</td>
+                            <td>
+                                <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="#339966" Visible="False">إعادة تعيين كلمة المرور</asp:LinkButton>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl">&nbsp;</td>
+                            <td>
+                                <asp:Label ID="lblstuerror" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="border-style: solid; border-width: thin; border-top-color: #808080">
+                                <table class="auto-style1">
+                                    <tr>
+                                        <td class="auto-style2"></td>
+                                        <td class="auto-style2"></td>
+                                    </tr>
+                                   
+                                </table>
+                            </td>
+                        </tr>
+                       
+                    </table>
+                </div>
+                <div id="studentlogin">
+                    <table class="auto-style1" dir="rtl">
+                        <tr>
+                            <td class="loginTittle" colspan="2">دخول الموظفين</td>
+                        </tr>
+                        <tr>
+                            <td class="lbl">اسم المستخدم </td>
+                            <td style="margin-right: 40px">
+                                <asp:TextBox ID="txtstaffuname" runat="server" CssClass="txt"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3">كلمة المرور </td>
+                            <td class="auto-style2" style="margin-right: 40px">
+                                <asp:TextBox ID="txtstaffpass" runat="server" CssClass="txt" TextMode="Password"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3">&nbsp;</td>
+                            <td class="auto-style2" style="margin-right: 40px">
+                                <asp:Button ID="btnstaff" runat="server" CssClass="btn" Text="دخول" OnClick="btnstaff_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3">&nbsp;</td>
+                            <td class="auto-style2" style="margin-right: 40px">
+                                <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#339966">إعادة تعيين كلمة المرور</asp:HyperLink>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3">&nbsp;</td>
+                            <td style="margin-right: 40px">
+                                <asp:Label ID="lblstafferror" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="left">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
